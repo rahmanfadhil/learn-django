@@ -1,24 +1,10 @@
+# pylint: disable=no-member
 from django.shortcuts import render
-
-
-posts = [
-    {
-        'title': 'Blog Post 1',
-        'content': 'First blog post content',
-        'author': 'Rahman Fadhil',
-        'date_posted': 'August 27, 2019'
-    },
-    {
-        'title': 'Blog Post 2',
-        'content': 'Second blog post content',
-        'author': 'Rahman Fadhil',
-        'date_posted': 'August 28, 2019'
-    },
-]
+from .models import Post
 
 
 def home(request):
-    context = {'posts': posts}
+    context = {'posts': Post.objects.all()}
     return render(request, 'blog/home.html', context=context)
 
 
