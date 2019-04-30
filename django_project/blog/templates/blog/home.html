@@ -2,12 +2,19 @@
 
 {% block content %}
 
-{% for post in posts %}
-<div class="post-card">
-  <h2>{{ post.title }}</h2>
-  <p class="text-muted">By {{ post.author }} on {{ post.date_posted|date:"F d, Y" }}</p>
-  <p>{{ post.content }}</p>
+<div class="post-cards">
+  {% for post in posts %}
+  <div class="pb-5 mb-5 border-bottom">
+    <div class="media">
+      <img src="{{ post.author.profile.image.url }}" class="mr-4 rounded-circle" width="64">
+      <div class="media-body">
+        <h2 class="mb-1">{{ post.title }}</h2>
+        <p class="text-muted mb-3">By {{ post.author }} on {{ post.date_posted|date:"F d, Y" }}</p>
+        <p class="mb-0">{{ post.content }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}
 
 {% endblock content %}

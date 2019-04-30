@@ -1,7 +1,3 @@
-.post-card {
-  margin-bottom: 40px;
-}
-
-.post-card h2 {
-  margin-bottom: 3px;
+.post-cards div:last-child {
+  border-bottom: none !important;
 }
