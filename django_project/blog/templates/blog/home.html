@@ -8,8 +8,8 @@
     <div class="media">
       <img src="{{ post.author.profile.image.url }}" class="mr-4 rounded-circle" width="64">
       <div class="media-body">
-        <h2 class="mb-1">{{ post.title }}</h2>
-        <p class="text-muted mb-3">By {{ post.author }} on {{ post.date_posted|date:"F d, Y" }}</p>
+        <a class="h2" href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
+        <p class="text-muted mb-3 mt-2">By {{ post.author }} on {{ post.date_posted|date:"F d, Y" }}</p>
         <p class="mb-0">{{ post.content }}</p>
       </div>
     </div>
